@@ -1,0 +1,39 @@
+{
+  "jewels": [
+    {
+      "id": "j1",
+      "title": "Golden Hauda",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "imageUrl": "https://uniquehubshop.com/wp-content/uploads/2019/07/j1.jpg",
+      "price": 600
+    },
+    {
+      "id": "j2",
+      "title": "Blue Hauda",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61k8PenuSnL._SY395._SX._UX._SY._UY_.jpg",
+      "price": 500
+    },
+    {
+      "id": "j3",
+      "title": "Red Hauda",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "imageUrl": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/2842056198439",
+      "price": 450
+    },
+    {
+      "id": "j4",
+      "title": "Water Hauda",
+      "description": "loremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+      "imageUrl": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/2842056198442",
+      "price": 450
+    }
+  ]
+}
+
+
+
+
+
+
+

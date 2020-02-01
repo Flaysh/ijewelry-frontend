@@ -1,0 +1,8 @@
+.buyingViewImage img{
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px grey;
+    border-radius: 0.5rem;
+}

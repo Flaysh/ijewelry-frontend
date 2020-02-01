@@ -1,0 +1,73 @@
+.jewelry {
+  margin: 1rem;
+}
+
+.jewelry__content {
+  padding: 0;
+}
+
+.jewelry__info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.jewelry__image {
+  width: 100%;
+  height: 12.5rem;
+  margin-right: 1.5rem;
+}
+
+.jewelry__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jewelry__info h2,
+.jewelry__info h3,
+.jewelry__info p {
+  margin: 0 0 0.5rem 0;
+}
+.jewelry__info p{
+  word-wrap: break-word;
+}
+
+.jewelry__actions {
+  padding: 0.5rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+.jewelry__actions h2{
+float: left;
+margin-left: 20%;
+}
+
+.jewelry__modal-content {
+  padding: 0;
+}
+
+.jewelry__modal-actions {
+  text-align: right;
+}
+
+.jewelry__actions button,
+.jewelry__actions a {
+  margin: 0.5rem;
+}
+
+
+@media (min-width: 768px) {
+  .jewelry{
+    float: left;
+    width: 20%;
+    box-sizing: border-box;
+  }
+  .jewelry__image {
+    height: 20rem;
+  } 
+}
+
+
+
+
+
