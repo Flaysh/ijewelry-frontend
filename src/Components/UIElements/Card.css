@@ -5,4 +5,11 @@
   padding: 1rem;
   overflow: hidden;
   background: white;
+  height: 33rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 24rem;
+  }
 }

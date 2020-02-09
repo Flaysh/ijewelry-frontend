@@ -24,7 +24,7 @@ const MainNavigation = props => {
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <nav className="main-navigation__drawer-nav">
-          <NavLinks />
+          <NavLinks isLoggedIn={props.isLoggedIn} isAdmin={props.isAdmin}/>
         </nav>
       </SideDrawer>
 
@@ -39,7 +39,7 @@ const MainNavigation = props => {
           <Link to="/">iJewelry</Link>
         </h2>
         <nav className="main-navigation__header-nav">
-          <NavLinks />
+          <NavLinks isLoggedIn={props.isLoggedIn} isAdmin={props.isAdmin} />
         </nav>
       </MainHeader>
     </React.Fragment>

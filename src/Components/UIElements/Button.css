@@ -1,7 +1,7 @@
 .main-button{
     display:inline-block;
     padding:0.8rem;
-    margin:0.5rem;
+    margin:1rem;
     border-radius:2em;
     box-sizing: border-box;
     color:#FFFFFF;
@@ -14,4 +14,3 @@
     .main-button:hover{
     background-color:rgba(102, 141, 191, 1);
     }
- 

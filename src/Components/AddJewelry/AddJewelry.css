@@ -1,0 +1,17 @@
+.addJewelry {
+	color: salmon;
+}
+ h1 {
+	color: black;
+}
+.addJewelry text{
+	color: red;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

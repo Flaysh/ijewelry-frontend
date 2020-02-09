@@ -13,7 +13,7 @@ const Catalog = props => {
     axios
     .get("http://localhost:5000/api/jewelries")
     .then(res => {
-      console.log(res)
+      // console.log(res)
       const jewels = res.data.jewelries;
       setJewelries(jewels);
     })
@@ -27,7 +27,7 @@ const Catalog = props => {
   if (jewelries.length === 0) {
     return (
       <div className="catalog center">
-        <Card>
+        <Card style={{height:'11rem'}}>
           <h2>No Jewelry found. Maybe add one?</h2>
           <Button goto='/add'>Add Jewelry</Button>
         </Card>

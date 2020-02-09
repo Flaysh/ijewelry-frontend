@@ -1,7 +1,7 @@
 import React from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import './styles.css';
+import './CreditCard.css';
 import Button from '../UIElements/Button'
 
 
@@ -87,7 +87,6 @@ export default class PaymentForm extends React.Component {
             <div className="form-actions">
               <Button className="btn btn-primary btn-block" goto="">PAY</Button>
             </div>
-
         </form>
       </div>
     );

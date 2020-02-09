@@ -41,3 +41,58 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+
+.form button{
+  display:inline-block;
+  padding:0.8rem;
+  margin:1rem;
+  border-radius:2em;
+  box-sizing: border-box;
+  color:#FFFFFF;
+  background-color:rgba(154, 181, 217, 1);
+  text-align:center;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-size: 1.4rem;
+  width: 40%;
+  border: none;
+  font-family: 'Comfortaa', cursive;
+}
+.form{
+  color: salmon;
+}
+.form label , h3{
+color: gray;
+}
+.form button:hover{
+background-color:rgba(102, 141, 191, 1);
+}
+
+input[type=text],input[type=tel],input[type=number],input[type=password]{
+  -webkit-appearance: none;
+  width: 80%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #C8CCD4;
+  background: none;
+  border-radius: 0;
+  color: #223254;
+  transition: all .15s ease;
+}
+   input[type=text],input[type=tel],input[type=number],input[type=password]:hover{
+      background: rgba(#223254,.03)
+  }
+  input[type=text],input[type=tel],input[type=number],input[type=password]:not(:placeholder-shown){
+      color: #5A667F;
+      transform: translateY(-0.5rem) scale(.99);
+  }
+
+   input[type=text],input[type=tel],input[type=number],input[type=password]:focus{
+      background: none;
+      outline: none;
+  }
