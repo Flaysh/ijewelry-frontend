@@ -93,10 +93,10 @@ export default function App() {
                 <About />
               </Route>
               <Route path="/login">
-                <Login />
+                <Login setIsLoggedIn={() => setIsLoggedIn(true)} setIsAdmin={() => setIsAdmin(true)}/>
               </Route>
               <Route path="/register">
-                <Register setIsLoggedIn={() => setIsLoggedIn(true)} />
+                <Register setIsLoggedIn={() => setIsLoggedIn(true)} setIsAdmin={() => setIsAdmin(true)}/>
               </Route>
               <Route path="/catalog">
                 <Catalog />
