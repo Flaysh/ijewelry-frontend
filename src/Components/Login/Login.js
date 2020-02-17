@@ -1,21 +1,23 @@
-import React from 'react';
+import React , { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 // import './AddJewelry.css';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
+import { LoginContext } from '../../context/LoginContext';
 
 const Login = props => {
+
+    const auth = useContext(LoginContext);
+
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async data => {
     await axios.post('http://localhost:5000/api/users/login' , data)
     .then((response)=> {
       console.log(response);
       if(response.status === 200){
-        props.setIsLoggedIn(true);
-        if(response.data.existingUser.isAdmin === true){
-        props.setIsAdmin(true);
-        }
-        props.history.push('/');
+        auth.login();
+        // if(response.data.existingUser.isAdmin === true){
+        // auth.isAdmin===true;
+        // }
       }
     })
     .catch((error) => {
@@ -39,4 +41,4 @@ const Login = props => {
   );
 }
 
-export default withRouter(Login);
+export default Login;

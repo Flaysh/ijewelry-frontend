@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,107 +13,80 @@ import MainNavigation from "./Components/Navigation/MainNavigation";
 import Add from "./Components/AddJewelry/AddJewelry";
 import Login from "./Components/Login/Login"
 import Register from "./Components/Register/Register";
+import { LoginContext } from "./context/LoginContext";
 
 export default function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  // const [isAdmin, setIsAdmin] = useState(false);
 
+  const login = useCallback(() => {
+    setIsLoggedIn(true)
+  }, []);
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false)
+  }, []);
+
+  let routes;
 
   if (isLoggedIn) {
-    return (
-      <div className="App">
-        <Router>
-          <MainNavigation isLoggedIn={isLoggedIn} isAdmin={isAdmin}/>
-          <main>
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/catalog">
-                <Catalog />
-              </Route>
-              <Route path="/add">
-                <Add />
-              </Route>
-              <Route path="/buy/:jewelryId">
-                <Buy />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </main>
-        </Router>
-      </div>
+    routes = (
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/catalog">
+          <Catalog />
+        </Route>
+        <Route path="/add">
+          <Add />
+        </Route>
+        <Route path="/buy/:jewelryId">
+          <Buy />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/catalog">
+          <Catalog />
+        </Route>
+        <Route path="/buy/:jewelryId">
+          <Buy />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     );
   }
-  if (isLoggedIn && isAdmin) {
-    return (
-      <div className="App">
-        <Router>
-          <MainNavigation />
-          <main>
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/register">
-                <Register />
-              </Route>
-              <Route path="/catalog">
-                <Catalog />
-              </Route>
-              <Route path="/add">
-                <Add />
-              </Route>
-              <Route path="/buy/:jewelryId">
-                <Buy />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </main>
-        </Router>
-      </div>
-    );
-  }
-  else {
-    return (
+  return (
+    <LoginContext.Provider value={{ isLoggedIn, login, logout }}>
       <div className="App">
         <Router>
           <MainNavigation />
           <main>
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/login">
-                <Login setIsLoggedIn={() => setIsLoggedIn(true)} setIsAdmin={() => setIsAdmin(true)}/>
-              </Route>
-              <Route path="/register">
-                <Register setIsLoggedIn={() => setIsLoggedIn(true)} setIsAdmin={() => setIsAdmin(true)}/>
-              </Route>
-              <Route path="/catalog">
-                <Catalog />
-              </Route>
-              <Route path="/buy/:jewelryId">
-                <Buy />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
+              {routes}
           </main>
         </Router>
       </div>
-    );
-  }
-
+    </LoginContext.Provider>
+  );
 }
+
 
 
